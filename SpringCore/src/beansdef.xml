@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id="person" class="com.phani.spring.Person">
+       <property name="name" value="Test Name"/>
+       <property name="city" value="Hyderabad"/>
+       <property name="phone" > <ref bean="phone"></ref></property>
+   </bean>
+   
+    <bean id="phone" class="com.phani.spring.Phone">
+       <property name="phoneNumber" value="12345"/>       
+   </bean>
+	
+	<bean id="methodTest1" class="com.phani.spring.MethodTest" init-method="testInitMethod" destroy-method="testDestroyMethod">
+       <property name="name" value="methodTest1"/>
+   </bean>
+  
+  <bean id="beanLifeCycle" class="com.phani.spring.TestBeanPostProcessor">
+  </bean>
+   
+</beans>
